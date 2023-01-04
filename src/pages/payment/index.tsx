@@ -68,18 +68,18 @@ const Tickets = () => {
   //     </div>
   // )}
 
-  const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
-    totalCost = ticketCost + bookingFee;
-    return (
-      <div className={styles.seatDetailsContainer}>
-        <div className={styles.seatDetails}>
-          Total
-        </div>
-        <div className={styles.seatCost}>
-          Rs.{totalCost}
-        </div>
-      </div>
-  )}
+  // const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
+  //   totalCost = ticketCost + bookingFee;
+  //   return (
+  //     <div className={styles.seatDetailsContainer}>
+  //       <div className={styles.seatDetails}>
+  //         Total
+  //       </div>
+  //       <div className={styles.seatCost}>
+  //         Rs.{totalCost}
+  //       </div>
+  //     </div>
+  // )}
 
   const modifiedSeatValue = () => {
     let newMovieSeatDetails = {...movieSeatDetails};

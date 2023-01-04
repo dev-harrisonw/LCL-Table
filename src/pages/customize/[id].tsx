@@ -1,27 +1,27 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { useState, useEffect, useContext } from 'react'
-import { Button, TextField } from '@mui/material';
+// import Head from 'next/head'
+// import { useRouter } from 'next/router'
+// import { useState, useEffect, useContext } from 'react'
+// import { Button, TextField } from '@mui/material';
 
-import { Movie, Seats } from '../../constants/models/Movies'
-import styles from './Customize.module.scss'
-import MoviesContext from '../../context/MoviesContext';
+// import { Movie, Seats } from '../../constants/models/Movies'
+// import styles from './Customize.module.scss'
+// import MoviesContext from '../../context/MoviesContext';
 
-const CustomizeRows = () => {  
-  const { movies, setMovies } = useContext(MoviesContext);
-  const router = useRouter()
-  const { id }: any = router.query
-  const movie = movies.find(mov => mov.id === parseInt(id));
+// const CustomizeRows = () => {  
+//   const { movies, setMovies } = useContext(MoviesContext);
+//   const router = useRouter()
+//   const { id }: any = router.query
+//   const movie = movies.find(mov => mov.id === parseInt(id));
   
-  // const [seatDetails, setSeatDetails] = useState<Seats>(movie?.seats || {});
-  const [row, setRow] = useState<number>(movie?.rows || 0);
-  const [column, setColumn] = useState<number>(movie?.cols || 0);
+//   const [seatDetails, setSeatDetails] = useState<Seats>(movie?.seats || {});
+//   const [row, setRow] = useState<number>(movie?.rows || 0);
+//   const [column, setColumn] = useState<number>(movie?.cols || 0);
   
-  useEffect(() => { clearSelectedSeats(); }, [])
+  // useEffect(() => { clearSelectedSeats(); }, [])
 
-  useEffect(() => { 
-    handleSubmit();
-  }, [row, column])
+  // useEffect(() => { 
+  //   handleSubmit();
+  // }, [row, column])
 
   const clearSelectedSeats = () => {
     let newMovieSeatDetails = {...seatDetails};

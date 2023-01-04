@@ -5,7 +5,7 @@ export const movies: Movie[] = [
     id: 1,
     name: 'London Comedy Lunch',
     language: 'English',
-    ticketCost: 200,
+    // ticketCost: 200,
     rows: 20,
     cols: 6,
     seats: {

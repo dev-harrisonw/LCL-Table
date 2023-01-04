@@ -6,7 +6,7 @@ export type Movie = {
   rows?: number,
   cols?: number,
   seats?: Seats
-}
+
 
 export type Seats = {
   [key: string]: number[]

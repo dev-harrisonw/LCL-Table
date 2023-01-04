@@ -17,7 +17,7 @@
   font-size: 12px;
   font-weight: 700;
   padding: 7px 11px;
-  border-radius: 3px;
+  border-radius: 30px;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 11%), 0 2px 4px 0 rgb(0 0 0 / 14%);
 }
 .colName {
@@ -40,10 +40,10 @@
 }
 .seatSelected {
   color: #fff !important;
-  background: rgb(53 212 6);
+  background:#71bf97;
 }
 .paymentButton {
-  background: #f84464 !important;
+  background: #71bf97 !important;
 }
 .paymentButtonContainer {
   position: sticky;

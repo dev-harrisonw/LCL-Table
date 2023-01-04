@@ -19,7 +19,7 @@ const Details = () => {
         <Link href={`/seats/${movie?.id}`}>
           <div className={styles.paymentButtonContainer}>
             <Button variant="contained" href="#contained-buttons" className={styles.paymentButton} >
-              Book Ticket
+              Tables
             </Button>
           </div>
         </Link>

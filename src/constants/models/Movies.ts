@@ -2,7 +2,7 @@ export type Movie = {
   id: number,
   name: string,
   language: string,
-  ticketCost?: number,
+  // ticketCost?: number,
   rows?: number,
   cols?: number,
   seats?: Seats

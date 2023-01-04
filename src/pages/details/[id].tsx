@@ -26,17 +26,17 @@ const Details = () => {
       )
   }
 
-  // const RenderCustomizeRowsButton = () => {
-  //     return (
-  //       <Link href={`/customize/${movie?.id}`}>
-  //         <div className={styles.paymentButtonContainer}>
-  //           <Button variant="contained" href="#contained-buttons" className={styles.paymentButton} >
-  //             Customize Row
-  //           </Button>
-  //         </div>
-  //       </Link>
-  //     )
-  // }
+  const RenderCustomizeRowsButton = () => {
+      return (
+        <Link href={`/customize/${movie?.id}`}>
+          <div className={styles.paymentButtonContainer}>
+            <Button variant="contained" href="#contained-buttons" className={styles.paymentButton} >
+              Seat Blocker
+            </Button>
+          </div>
+        </Link>
+      )
+  }
     
   if (!movie) return <div>loading...</div>
   return (

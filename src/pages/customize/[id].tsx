@@ -66,21 +66,21 @@ const CustomizeRows = () => {
     }
   }
 
-  // const RenderInputFields = () => {
-  //   return (
-  //     <div className={styles.inputContainer}>
-  //       <form className={styles.inputHolder}>
-  //         <TextField id="row" type='number' label="Row" variant="outlined" size="small" className={styles.inputField}
-  //           name="row" value={row} onChange={(e) => setRow(parseInt(e.target.value) || 0)} />
-  //         <TextField id="outlined-basic" type='number' label="Column" variant="outlined" size="small" className={styles.inputField}
-  //           value={column} onChange={(e) => setColumn(parseInt(e.target.value) || 0)} />
-  //         <Button onClick={handleSaveSetup} variant="contained" className={styles.saveSetUpButton}>
-  //           Save Setup
-  //         </Button>
-  //       </form>
-  //     </div>
-  //   )
-  // }
+  const RenderInputFields = () => {
+    return (
+      <div className={styles.inputContainer}>
+        <form className={styles.inputHolder}>
+          <TextField id="row" type='number' label="Row" variant="outlined" size="small" className={styles.inputField}
+            name="row" value={row} onChange={(e) => setRow(parseInt(e.target.value) || 0)} />
+          <TextField id="outlined-basic" type='number' label="Column" variant="outlined" size="small" className={styles.inputField}
+            value={column} onChange={(e) => setColumn(parseInt(e.target.value) || 0)} />
+          <Button onClick={handleSaveSetup} variant="contained" className={styles.saveSetUpButton}>
+            Save Setup
+          </Button>
+        </form>
+      </div>
+    )
+  }
 
   const onSeatClick = (seatValue: number, rowIndex: number, key: string) => {
     if (seatDetails) {
@@ -142,7 +142,7 @@ const CustomizeRows = () => {
       </Head>
       <div className={styles.seatsContainer}>
         <h1>{movie.name}</h1>
-        {RenderInputFields()}
+        {/* {RenderInputFields()} */}
         <p className={styles.header}>Select Seats to be <b className={styles.headerBlockedText}>Blocked</b></p>
         {seatDetails && <RenderSeats />}
       </div>

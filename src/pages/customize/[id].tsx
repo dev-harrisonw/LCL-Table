@@ -13,7 +13,7 @@ const CustomizeRows = () => {
   const { id }: any = router.query
   const movie = movies.find(mov => mov.id === parseInt(id));
   
-  const [seatDetails, setSeatDetails] = useState<Seats>(movie?.seats || {});
+  // const [seatDetails, setSeatDetails] = useState<Seats>(movie?.seats || {});
   const [row, setRow] = useState<number>(movie?.rows || 0);
   const [column, setColumn] = useState<number>(movie?.cols || 0);
   

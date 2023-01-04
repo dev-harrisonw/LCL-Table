@@ -55,18 +55,18 @@ const Tickets = () => {
       </div>
   )}
 
-  const RenderBookingCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
-    bookingFee = selectedSeats.length * bookingChargePerTicket;
-    return (
-      <div className={styles.seatDetailsContainer}>
-        <div className={styles.seatDetails}>
-          Booking Charge
-        </div>
-        <div className={styles.seatCost}>
-          Rs.{bookingFee}
-        </div>
-      </div>
-  )}
+  // const RenderBookingCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
+  //   bookingFee = selectedSeats.length * bookingChargePerTicket;
+  //   return (
+  //     <div className={styles.seatDetailsContainer}>
+  //       <div className={styles.seatDetails}>
+  //         Booking Charge
+  //       </div>
+  //       <div className={styles.seatCost}>
+  //         Rs.{bookingFee}
+  //       </div>
+  //     </div>
+  // )}
 
   const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
     totalCost = ticketCost + bookingFee;

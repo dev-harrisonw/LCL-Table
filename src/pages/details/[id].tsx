@@ -31,7 +31,7 @@ const Details = () => {
         <Link href={`/customize/${movie?.id}`}>
           <div className={styles.paymentButtonContainer}>
             <Button variant="contained" href="#contained-buttons" className={styles.paymentButton} >
-              Seat Blocker
+              Customize Row
             </Button>
           </div>
         </Link>

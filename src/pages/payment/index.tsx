@@ -107,7 +107,7 @@ const Tickets = () => {
     return (
       <div className={styles.paymentButtonContainer}>
         <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
-         {isTimerCompleted ? 'Confirm Booking' : `Confirm Booking (${seconds})` }
+         {isTimerCompleted ? 'Confirm Table' : `Confirm Table (${seconds})` }
         </Button>
       </div>
     )
@@ -118,12 +118,12 @@ const Tickets = () => {
     
     if (!movie) return <div>loading...</div>
     return (
-    <div className={styles.card}>
-      <div className={styles.cardTitleContainer}>
-        <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
-        <div className={styles.cardTitle}>
-          BOOKING SUMMARY
-        </div>
+    // <div className={styles.card}>
+    //   <div className={styles.cardTitleContainer}>
+    //     <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
+    //     <div className={styles.cardTitle}>
+    //       BOOKING SUMMARY
+    //     </div>
       </div>
         <p className={styles.movieName}>{movie.name}</p>
       <RenderSeatDetails selectedSeats={selectedSeats}/>

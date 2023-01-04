@@ -142,7 +142,7 @@ const CustomizeRows = () => {
       </Head>
       <div className={styles.seatsContainer}>
         <h1>{movie.name}</h1>
-        {/* {RenderInputFields()} */}
+        {RenderInputFields()}
         <p className={styles.header}>Select Seats to be <b className={styles.headerBlockedText}>Blocked</b></p>
         {seatDetails && <RenderSeats />}
       </div>

@@ -34,7 +34,7 @@ export default function Home() {
         <title>Book My Ticket | Home</title>
       </Head>
       <div className={styles.moviesContainer}>
-        <h1 className={styles.title}>Recommended Movies</h1>
+        <h1 className={styles.title}>Book your seats</h1>
         <Grid container spacing={2}>
           <RenderMoviesList/>
         </Grid>

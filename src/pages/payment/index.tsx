@@ -12,7 +12,7 @@ import MoviesContext from '../../context/MoviesContext';
 const Tickets = () => {
   const { movies, setMovies } = useContext(MoviesContext);
   const router = useRouter();
-  const [seconds, setSeconds] = useState(15);
+  const [seconds, setSeconds] = useState(5);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
   let movieSeatDetails: Seats = {};
   let bookingChargePerTicket = '', ticketCost: number, bookingFee: number, totalCost: number;
@@ -118,12 +118,12 @@ const Tickets = () => {
     
     if (!movie) return <div>loading...</div>
     return (
-    // <div className={styles.card}>
-    //   <div className={styles.cardTitleContainer}>
-    //     <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
-    //     <div className={styles.cardTitle}>
-    //       BOOKING SUMMARY
-    //     </div>
+    <div className={styles.card}>
+      <div className={styles.cardTitleContainer}>
+        <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
+        <div className={styles.cardTitle}>
+          BOOKING SUMMARY
+        </div>
       </div>
         <p className={styles.movieName}>{movie.name}</p>
       <RenderSeatDetails selectedSeats={selectedSeats}/>

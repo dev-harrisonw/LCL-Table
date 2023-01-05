@@ -22,13 +22,13 @@ const Tickets = () => {
     movieSeatDetails = JSON.parse(seatDetails);
   }
 
-  // useEffect(() => {
-  //   if (seconds > 0) {
-  //     setTimeout(() => setSeconds(seconds - 1), 1000);
-  //   } else {
-  //     setIsTimerCompleted(true);
-  //   }
-  // });
+  useEffect(() => {
+    if (seconds > 0) {
+      setTimeout(() => setSeconds(seconds - 1), 5000);
+    } else {
+      setIsTimerCompleted(true);
+    }
+  });
 
   const computeSelectedSeats = () => {
     let selectedSeats: string[] = [];

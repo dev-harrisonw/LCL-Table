@@ -12,7 +12,7 @@ import MoviesContext from '../../context/MoviesContext';
 const Tickets = () => {
   const { movies, setMovies } = useContext(MoviesContext);
   const router = useRouter();
-  const [seconds, setSeconds] = useState(5);
+  const [seconds, setSeconds] = useState(15);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
   let movieSeatDetails: Seats = {};
   let bookingChargePerTicket = '', ticketCost: number, bookingFee: number, totalCost: number;
@@ -24,7 +24,7 @@ const Tickets = () => {
 
   useEffect(() => {
     if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 1000);
+      setTimeout(() => setSeconds(seconds - 1), 000);
     } else {
       setIsTimerCompleted(true);
     }
@@ -50,7 +50,7 @@ const Tickets = () => {
           {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
         </div>
         <div className={styles.seatCost}>
-          Test{ticketCost}
+          Rs.{ticketCost}
         </div>
       </div>
   )}
@@ -63,7 +63,7 @@ const Tickets = () => {
           Booking Charge
         </div>
         <div className={styles.seatCost}>
-          Test{bookingFee}
+          Rs.{bookingFee}
         </div>
       </div>
   )}
@@ -76,7 +76,7 @@ const Tickets = () => {
           Total
         </div>
         <div className={styles.seatCost}>
-          Test{totalCost}
+          Rs.{totalCost}
         </div>
       </div>
   )}
@@ -127,9 +127,9 @@ const Tickets = () => {
       </div>
         <p className={styles.movieName}>{movie.name}</p>
       <RenderSeatDetails selectedSeats={selectedSeats}/>
-      // <RenderBookingCharge selectedSeats={selectedSeats}/>
+      <RenderBookingCharge selectedSeats={selectedSeats}/>
       <hr className={styles.hrStyle}/>
-      // <RenderTotalCharge selectedSeats={selectedSeats}/>
+      <RenderTotalCharge selectedSeats={selectedSeats}/>
       <RenderConfirmButton />
     </div>
     )

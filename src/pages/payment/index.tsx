@@ -50,7 +50,7 @@ const Tickets = () => {
           {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
         </div>
         <div className={styles.seatCost}>
-          Rs.{ticketCost}
+          Test.02{ticketCost}
         </div>
       </div>
   )}
@@ -63,7 +63,7 @@ const Tickets = () => {
           Booking Charge
         </div>
         <div className={styles.seatCost}>
-          Rs.{bookingFee}
+          Test.01{bookingFee}
         </div>
       </div>
   )}
@@ -76,7 +76,7 @@ const Tickets = () => {
           Total
         </div>
         <div className={styles.seatCost}>
-          Rs.{totalCost}
+          Test{totalCost}
         </div>
       </div>
   )}
@@ -103,14 +103,14 @@ const Tickets = () => {
     }
   }
 
-  // const RenderConfirmButton = () => {
-  //   return (
-  //     <div className={styles.paymentButtonContainer}>
-  //       <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
-  //        {isTimerCompleted ? 'Confirm Seats' : `Confirm Booking (${seconds})` }
-  //       </Button>
-  //     </div>
-  //   )
+  const RenderConfirmButton = () => {
+    return (
+      <div className={styles.paymentButtonContainer}>
+        <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
+         {isTimerCompleted ? 'Confirm Seats' : `Confirm Booking (${seconds})` }
+        </Button>
+      </div>
+    )
   }
 
   const RenderCard = () => {
@@ -129,7 +129,7 @@ const Tickets = () => {
       <RenderSeatDetails selectedSeats={selectedSeats}/>
       // <RenderBookingCharge selectedSeats={selectedSeats}/>
       <hr className={styles.hrStyle}/>
-      <RenderTotalCharge selectedSeats={selectedSeats}/>
+      // <RenderTotalCharge selectedSeats={selectedSeats}/>
       <RenderConfirmButton />
     </div>
     )

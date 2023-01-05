@@ -47,7 +47,7 @@ const Tickets = () => {
     return (
       <div className={styles.seatDetailsContainer}>
         <div className={styles.seatDetails}>
-          {selectedSeats.join(', ')} ({selectedSeats.length} Tables)
+          {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
         </div>
         <div className={styles.seatCost}>
           Rs.{ticketCost}
@@ -60,7 +60,7 @@ const Tickets = () => {
     return (
       <div className={styles.seatDetailsContainer}>
         <div className={styles.seatDetails}>
-          Table Summary
+          Table S
         </div>
         <div className={styles.seatCost}>
           Rs.{bookingFee}

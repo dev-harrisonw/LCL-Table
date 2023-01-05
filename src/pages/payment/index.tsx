@@ -24,7 +24,7 @@ const Tickets = () => {
 
   useEffect(() => {
     if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 000);
+      setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
       setIsTimerCompleted(true);
     }
@@ -49,9 +49,9 @@ const Tickets = () => {
         <div className={styles.seatDetails}>
           {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
         </div>
-        <div className={styles.seatCost}>
+        {/* <div className={styles.seatCost}>
           Rs.{ticketCost}
-        </div>
+        </div> */}
       </div>
   )}
 
@@ -60,11 +60,11 @@ const Tickets = () => {
     return (
       <div className={styles.seatDetailsContainer}>
         <div className={styles.seatDetails}>
-          Booking Charge
+          Table Summary
         </div>
-        <div className={styles.seatCost}>
+        {/* <div className={styles.seatCost}>
           Rs.{bookingFee}
-        </div>
+        </div> */}
       </div>
   )}
 
@@ -75,9 +75,9 @@ const Tickets = () => {
         <div className={styles.seatDetails}>
           Total
         </div>
-        <div className={styles.seatCost}>
+        {/* <div className={styles.seatCost}>
           Rs.{totalCost}
-        </div>
+        </div> */}
       </div>
   )}
 

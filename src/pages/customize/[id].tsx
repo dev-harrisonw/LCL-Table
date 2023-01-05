@@ -69,15 +69,15 @@ const CustomizeRows = () => {
   const RenderInputFields = () => {
     return (
       <div className={styles.inputContainer}>
-        {/* <form className={styles.inputHolder}>
-          <TextField id="row" type='number' label="Row" variant="outlined" size="small" className={styles.inputField}
+        <form className={styles.inputHolder}>
+          {/* <TextField id="row" type='number' label="Row" variant="outlined" size="small" className={styles.inputField}
             name="row" value={row} onChange={(e) => setRow(parseInt(e.target.value) || 0)} />
           <TextField id="outlined-basic" type='number' label="Column" variant="outlined" size="small" className={styles.inputField}
             value={column} onChange={(e) => setColumn(parseInt(e.target.value) || 0)} />
           <Button onClick={handleSaveSetup} variant="contained" className={styles.saveSetUpButton}>
             Save Setup
-          </Button>
-        </form> */}
+          </Button> */}
+        </form>
       </div>
     )
   }

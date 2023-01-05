@@ -50,7 +50,7 @@ const Tickets = () => {
           {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
         </div>
         <div className={styles.seatCost}>
-          Test.02{ticketCost}
+          Test{ticketCost}
         </div>
       </div>
   )}
@@ -63,7 +63,7 @@ const Tickets = () => {
           Booking Charge
         </div>
         <div className={styles.seatCost}>
-          Test.01{bookingFee}
+          Test{bookingFee}
         </div>
       </div>
   )}

@@ -22,13 +22,13 @@ const Tickets = () => {
     movieSeatDetails = JSON.parse(seatDetails);
   }
 
-  useEffect(() => {
-    if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 1000);
-    } else {
-      setIsTimerCompleted(true);
-    }
-  });
+  // useEffect(() => {
+  //   if (seconds > 0) {
+  //     setTimeout(() => setSeconds(seconds - 1), 1000);
+  //   } else {
+  //     setIsTimerCompleted(true);
+  //   }
+  // });
 
   const computeSelectedSeats = () => {
     let selectedSeats: string[] = [];
@@ -55,31 +55,31 @@ const Tickets = () => {
       </div>
   )}
 
-  // const RenderBookingCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
-  //   bookingFee = selectedSeats.length * bookingChargePerTicket;
-  //   return (
-  //     <div className={styles.seatDetailsContainer}>
-  //       <div className={styles.seatDetails}>
-  //         Booking Charge
-  //       </div>
-  //       <div className={styles.seatCost}>
-  //         Rs.{bookingFee}
-  //       </div>
-  //     </div>
-  // )}
+  const RenderBookingCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
+    bookingFee = selectedSeats.length * bookingChargePerTicket;
+    return (
+      <div className={styles.seatDetailsContainer}>
+        <div className={styles.seatDetails}>
+          Booking Charge
+        </div>
+        <div className={styles.seatCost}>
+          Rs.{bookingFee}
+        </div>
+      </div>
+  )}
 
-  // const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
-  //   totalCost = ticketCost + bookingFee;
-  //   return (
-  //     <div className={styles.seatDetailsContainer}>
-  //       <div className={styles.seatDetails}>
-  //         Total
-  //       </div>
-  //       <div className={styles.seatCost}>
-  //         Rs.{totalCost}
-  //       </div>
-  //     </div>
-  // )}
+  const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
+    totalCost = ticketCost + bookingFee;
+    return (
+      <div className={styles.seatDetailsContainer}>
+        <div className={styles.seatDetails}>
+          Total
+        </div>
+        <div className={styles.seatCost}>
+          Rs.{totalCost}
+        </div>
+      </div>
+  )}
 
   const modifiedSeatValue = () => {
     let newMovieSeatDetails = {...movieSeatDetails};

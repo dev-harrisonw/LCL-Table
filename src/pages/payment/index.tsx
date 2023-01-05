@@ -15,7 +15,7 @@ const Tickets = () => {
   const [seconds, setSeconds] = useState(5);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
   let movieSeatDetails: Seats = {};
-  let bookingChargePerTicket = 20, ticketCost: number, bookingFee: number, totalCost: number;
+  let bookingChargePerTicket = '', ticketCost: number, bookingFee: number, totalCost: number;
   const {movieId, seatDetails}: any = router.query;
   const movie = movies.find(mov => mov.id === parseInt(movieId));
   if (seatDetails) {
@@ -24,7 +24,7 @@ const Tickets = () => {
 
   useEffect(() => {
     if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 5000);
+      setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
       setIsTimerCompleted(true);
     }
@@ -103,14 +103,14 @@ const Tickets = () => {
     }
   }
 
-  const RenderConfirmButton = () => {
-    return (
-      <div className={styles.paymentButtonContainer}>
-        <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
-         {isTimerCompleted ? 'Confirm Seats' : `Confirm Booking (${seconds})` }
-        </Button>
-      </div>
-    )
+  // const RenderConfirmButton = () => {
+  //   return (
+  //     <div className={styles.paymentButtonContainer}>
+  //       <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
+  //        {isTimerCompleted ? 'Confirm Seats' : `Confirm Booking (${seconds})` }
+  //       </Button>
+  //     </div>
+  //   )
   }
 
   const RenderCard = () => {
@@ -127,7 +127,7 @@ const Tickets = () => {
       </div>
         <p className={styles.movieName}>{movie.name}</p>
       <RenderSeatDetails selectedSeats={selectedSeats}/>
-      <RenderBookingCharge selectedSeats={selectedSeats}/>
+      // <RenderBookingCharge selectedSeats={selectedSeats}/>
       <hr className={styles.hrStyle}/>
       <RenderTotalCharge selectedSeats={selectedSeats}/>
       <RenderConfirmButton />

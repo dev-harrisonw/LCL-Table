@@ -100,7 +100,7 @@ const Seats = () => {
         <Link href={{ pathname: '/payment', query: { movieId: movie?.id, seatDetails: JSON.stringify(seatDetails) } }}>
           <div className={styles.paymentButtonContainer}>
             <Button variant="contained" href="#contained-buttons" className={styles.paymentButton} >
-              Pay Rs.{selectedSeats.length*(movie?.ticketCost || 0)}
+              Table Confirmation{selectedSeats.length*(movie?.ticketCost || 0)}
             </Button>
           </div>
         </Link>

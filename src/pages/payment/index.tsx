@@ -55,31 +55,31 @@ const Tickets = () => {
       </div>
   )}
 
-  const RenderBookingCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
-    bookingFee = selectedSeats.length * bookingChargePerTicket;
-    return (
-      <div className={styles.seatDetailsContainer}>
-        <div className={styles.seatDetails}>
-          Booking Charge
-        </div>
-        <div className={styles.seatCost}>
-          Rs.{bookingFee}
-        </div>
-      </div>
-  )}
+  // const RenderBookingCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
+  //   bookingFee = selectedSeats.length * bookingChargePerTicket;
+  //   return (
+  //     <div className={styles.seatDetailsContainer}>
+  //       <div className={styles.seatDetails}>
+  //         Booking Charge
+  //       </div>
+  //       <div className={styles.seatCost}>
+  //         Rs.{bookingFee}
+  //       </div>
+  //     </div>
+  // )}
 
-  const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
-    totalCost = ticketCost + bookingFee;
-    return (
-      <div className={styles.seatDetailsContainer}>
-        <div className={styles.seatDetails}>
-          Total
-        </div>
-        <div className={styles.seatCost}>
-          Rs.{totalCost}
-        </div>
-      </div>
-  )}
+  // const RenderTotalCharge = ({selectedSeats}: {selectedSeats: string[]}) => {
+  //   totalCost = ticketCost + bookingFee;
+  //   return (
+  //     <div className={styles.seatDetailsContainer}>
+  //       <div className={styles.seatDetails}>
+  //         Total
+  //       </div>
+  //       <div className={styles.seatCost}>
+  //         Rs.{totalCost}
+  //       </div>
+  //     </div>
+  // )}
 
   const modifiedSeatValue = () => {
     let newMovieSeatDetails = {...movieSeatDetails};
@@ -107,7 +107,7 @@ const Tickets = () => {
     return (
       <div className={styles.paymentButtonContainer}>
         <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
-         {isTimerCompleted ? 'Confirm Booking' : `Confirm Booking (${seconds})` }
+         {isTimerCompleted ? 'Confirm Seats' : `Confirm Booking (${seconds})` }
         </Button>
       </div>
     )
@@ -118,12 +118,12 @@ const Tickets = () => {
     
     if (!movie) return <div>loading...</div>
     return (
-    <div className={styles.card}>
-      <div className={styles.cardTitleContainer}>
-        <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
-        <div className={styles.cardTitle}>
-          BOOKING SUMMARY
-        </div>
+    // <div className={styles.card}>
+    //   <div className={styles.cardTitleContainer}>
+    //     <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
+    //     <div className={styles.cardTitle}>
+    //       BOOKING SUMMARY
+    //     </div>
       </div>
         <p className={styles.movieName}>{movie.name}</p>
       <RenderSeatDetails selectedSeats={selectedSeats}/>

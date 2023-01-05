@@ -47,11 +47,11 @@ const Tickets = () => {
     return (
       <div className={styles.seatDetailsContainer}>
         <div className={styles.seatDetails}>
-          {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
+          {selectedSeats.join(', ')} ({selectedSeats.length} Tables)
         </div>
-        {/* <div className={styles.seatCost}>
+        <div className={styles.seatCost}>
           Rs.{ticketCost}
-        </div> */}
+        </div>
       </div>
   )}
 
@@ -62,9 +62,9 @@ const Tickets = () => {
         <div className={styles.seatDetails}>
           Table Summary
         </div>
-        {/* <div className={styles.seatCost}>
+        <div className={styles.seatCost}>
           Rs.{bookingFee}
-        </div> */}
+        </div>
       </div>
   )}
 
@@ -75,9 +75,9 @@ const Tickets = () => {
         <div className={styles.seatDetails}>
           Total
         </div>
-        {/* <div className={styles.seatCost}>
+        <div className={styles.seatCost}>
           Rs.{totalCost}
-        </div> */}
+        </div>
       </div>
   )}
 

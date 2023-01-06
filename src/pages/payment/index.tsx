@@ -107,7 +107,7 @@ const Tickets = () => {
     return (
       <div className={styles.paymentButtonContainer}>
         <Button variant="contained" disabled={isTimerCompleted} className={styles.paymentButton} onClick={onConfirmButtonClick}>
-         {isTimerCompleted ? 'Confirm Seats' : `Confirm Booking (${seconds})` }
+         {isTimerCompleted ? 'Confirm Seats' : `Confirm Seats (${seconds})` }
         </Button>
       </div>
     )

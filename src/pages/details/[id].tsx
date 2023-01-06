@@ -46,7 +46,7 @@ const Details = () => {
       </Head>
       <div className={styles.seatsContainer}>
         <h1>{movie.name} - {movie.language}</h1>
-        <div className={styles.language}>Ticket Cost: {movie.ticketCost}</div>
+        <div className={styles.language}>Seat Picker {movie.ticketCost}</div>
         <div className={styles.buttonContainer}>
           <div className={styles.buttonHolder}>
             <RenderBookTicketsButton />

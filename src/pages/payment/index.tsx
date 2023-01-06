@@ -15,7 +15,7 @@ const Tickets = () => {
   const [seconds, setSeconds] = useState(5);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
   let movieSeatDetails: Seats = {};
-  let bookingChargePerTicket = '', ticketCost: number, bookingFee: number, totalCost: number;
+  let bookingChargePerTicket = 0, ticketCost: number, bookingFee: number, totalCost: number;
   const {movieId, seatDetails}: any = router.query;
   const movie = movies.find(mov => mov.id === parseInt(movieId));
   if (seatDetails) {

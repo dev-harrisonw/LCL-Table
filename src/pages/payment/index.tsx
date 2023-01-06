@@ -50,7 +50,6 @@ const Tickets = () => {
           {selectedSeats.join(', ')} ({selectedSeats.length} Tickets)
         </div>
         <div className={styles.seatCost}>
-          Rs.{ticketCost}
         </div>
       </div>
   )}
@@ -63,7 +62,6 @@ const Tickets = () => {
           Table S
         </div>
         <div className={styles.seatCost}>
-          Rs.{bookingFee}
         </div>
       </div>
   )}
@@ -122,7 +120,7 @@ const Tickets = () => {
       <div className={styles.cardTitleContainer}>
         <Link href={{ pathname: `/seats/${movie?.id}`, query: { seats: isTimerCompleted ? null : JSON.stringify(seatDetails) }}}><ArrowBackIcon /></Link>
         <div className={styles.cardTitle}>
-          BOOKING SUMMARY
+          TABLE SUMMARY
         </div>
       </div>
         <p className={styles.movieName}>{movie.name}</p>

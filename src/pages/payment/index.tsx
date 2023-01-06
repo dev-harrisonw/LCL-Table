@@ -127,9 +127,7 @@ const Tickets = () => {
       </div>
         <p className={styles.movieName}>{movie.name}</p>
       <RenderSeatDetails selectedSeats={selectedSeats}/>
-      <RenderBookingCharge selectedSeats={selectedSeats}/>
       <hr className={styles.hrStyle}/>
-      <RenderTotalCharge selectedSeats={selectedSeats}/>
       <RenderConfirmButton />
     </div>
     )

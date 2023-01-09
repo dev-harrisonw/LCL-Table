@@ -38,22 +38,27 @@ const CustomizeRows = () => {
   const handleSubmit = () => {
     let newSeatObject: Seats = {};
     let key: string;
-    for (let i=0; i<column; i++) {
-      if (i<26) {
-        key = String.fromCharCode(65+i)
+    let counter = 1;
+    for (let i = 0; i < column; i++) {
+      if (i < 26) {
+        key = String.fromCharCode(65 + i);
       } else {
-        let character = String.fromCharCode(64+(i/25));
-        key = `${character}${String.fromCharCode(64+i%25)}`;
+        let character = String.fromCharCode(64 + (i / 25));
+        key = `${character}${String.fromCharCode(64 + i % 25)}`;
       }
-      newSeatObject[key] = Array(row).fill(0).map((_,i)=> {
+      newSeatObject[key] = Array(row).fill(0).map((_, i) => {
         if (seatDetails && seatDetails[key] && seatDetails[key][i]) {
           return seatDetails[key][i];
         } else {
           return 0;
         }
       });
+      for (let j = 0; j < row; j++) {
+        newSeatObject[key][j].label = counter;
+        counter++;
+      }
     }
-    console.log(seatDetails)
+    console.log(seatDetails);
     setSeatDetails(newSeatObject); 
   }
 
@@ -80,7 +85,7 @@ const CustomizeRows = () => {
 
   const onSeatClick = (seatValue: number, rowIndex: number, key: string) => {
     if (seatDetails) {
-      if (seatValue === 100) {
+      if (seatValue === 1) {
         return;
       } else if (seatValue === 0) {
         seatDetails[key][rowIndex] = 3; 

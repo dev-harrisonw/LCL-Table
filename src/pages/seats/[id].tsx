@@ -22,6 +22,22 @@ const Seats = () => {
     }
   }, [])
 
+  // ChatGPT 
+
+  const seats = [{x: 0, y: 0, radius: 10}, {x: 50, y: 50, radius: 20}, {x: 100, y: 100, radius: 30}];
+
+for (const seat of seats) {
+  for (let i = 0; i < 8; i++) {
+    const angle = (Math.PI / 4) * i; // divide a full circle into 8 equal parts
+    const x = seat.x + Math.cos(angle) * seat.radius;
+    const y = seat.y + Math.sin(angle) * seat.radius;
+    const smallerSeat = {x, y, radius: seat.radius / 2};
+    console.log(smallerSeat);
+  }
+}
+
+ // ChatGPT code 
+
   const clearSelectedSeats = () => {
     let newMovieSeatDetails = {...seatDetails};
     for(let key in seatDetails) {

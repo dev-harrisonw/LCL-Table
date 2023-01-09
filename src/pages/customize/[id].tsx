@@ -80,9 +80,9 @@ const CustomizeRows = () => {
 
   const onSeatClick = (seatValue: number, rowIndex: number, key: string) => {
     if (seatDetails) {
-      if (seatValue === 1) {
+      if (seatValue === 100) {
         return;
-      } else if (seatValue === 100) {
+      } else if (seatValue === 0) {
         seatDetails[key][rowIndex] = 3; 
       } else {
         seatDetails[key][rowIndex] = 0; 

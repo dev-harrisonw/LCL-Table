@@ -82,7 +82,7 @@ const CustomizeRows = () => {
     if (seatDetails) {
       if (seatValue === 1) {
         return;
-      } else if (seatValue === 0) {
+      } else if (seatValue === 100) {
         seatDetails[key][rowIndex] = 3; 
       } else {
         seatDetails[key][rowIndex] = 0; 

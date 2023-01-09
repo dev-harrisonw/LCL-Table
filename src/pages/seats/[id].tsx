@@ -65,88 +65,63 @@ const Seats = () => {
     setSeatDetails({...seatDetails});
   }
 
-  /**
+ /**
    * 0 - Not booked
    * 1 - Booked
    * 2 - Selected
    * 3 - Blocked
    */
-  const getClassNameForSeats = (seatValue: number) => {
-    let dynamicClass;
-    if (seatValue === 0) {  // Not booked
-      dynamicClass = styles.seatNotBooked;
-    }else if (seatValue === 1) {  // booked
-      dynamicClass = styles.seatBooked;
-    } else if (seatValue === 2) {  // Seat Selected
-      dynamicClass = styles.seatSelected;
-    } else { // Seat Blocked
-      dynamicClass = styles.seatBlocked;
-    }
-    return `${styles.seats} ${dynamicClass}`
-  }
 
-  const RenderSeats = () => {
-    let seatArray = [];
-    for(let key in seatDetails) {
-      let colValue = seatDetails[key].map((seatValue, rowIndex) => (
-        <span key={`${key}.${rowIndex}`} className={styles.seatsHolder}>
-          {rowIndex === 0 && <span className={styles.colName}>{key}</span>}
-          <span className={getClassNameForSeats(seatValue)} onClick={() => onSeatClick(seatValue, rowIndex, key)}>
-            {rowIndex+1}
-          </span>
-          {seatDetails && rowIndex === seatDetails[key].length-1 && <><br/><br/></>}
+ const getClassNameForSeats = (seatValue: number) => {
+  let dynamicClass;
+  if (seatValue === 0) {  // Not booked
+    dynamicClass = styles.seatNotBooked;
+  }else if (seatValue === 1) {	dynamicClass = styles.seatBooked;
+  } else if (seatValue === 2) {  // Seat Selected
+    dynamicClass = styles.seatSelected;
+  } else { // Seat Blocked
+    dynamicClass = styles.seatBlocked;
+  }
+  return `${styles.seats} ${dynamicClass}`
+}
+
+const RenderSeats = () => {
+  let seatArray = [];
+  for(let key in seatDetails) {
+    let colValue = seatDetails[key].map((seatValue, rowIndex) => (
+      <span key={`${key}.${rowIndex}`} className={styles.seatsHolder}>
+        {rowIndex === 0 && <span className={styles.colName}>{key}</span>}
+        <span className={getClassNameForSeats(seatValue)} onClick={() => onSeatClick(seatValue, rowIndex, key)}>
+          {rowIndex+1}
         </span>
-      ))
-      seatArray.push(colValue);
-    }
-    return (
-      <div className={styles.seatsLeafContainer}>{seatArray}</div>
-    ) 
+        {seatDetails && rowIndex === seatDetails[key].length-1 && <><br/><br/></>}
+      </span>
+    ))
+    seatArray.push(colValue);
   }
+  return seatArray;
+}
 
-  const RenderPaymentButton = () => {
-    selectedSeats = [];
-    for(let key in seatDetails) {
-      seatDetails[key].forEach((seatValue, seatIndex) => {
-        if (seatValue === 2) {
-          selectedSeats.push(`${key}${seatIndex+1}`)
-        }
-      })
-    }
-    if (selectedSeats.length) {
-      return (
-        <Link href={{ pathname: '/payment', query: { movieId: movie?.id, seatDetails: JSON.stringify(seatDetails) } }}>
-          <div className={styles.paymentButtonContainer}>
-            <Button variant="contained" href="#contained-buttons" className={styles.paymentButton} >
-              Table Confirmation
-            </Button>
-          </div>
+return (
+  <div className={styles.bookSeats}>
+    <Head>
+      <title>Book Seats</title>
+    </Head>
+    <div className={styles.header}>
+      <div className={styles.title}>{movie?.name}</div>
+      <div className={styles.backLink}>
+        <Link href="/">
+          <a>
+            <Button>Back</Button>
+          </a>
         </Link>
-      )
-    } else {
-      return <></>
-    }
-  }
-    
-  if (!movie) return <div>loading...</div>
-  return (
-    <>
-      <Head>
-        <title>Seats</title>
-      </Head>
-      <div className={styles.seatsContainer}>
-        <h1>{movie.name}</h1>
-        {seatDetails && <RenderSeats />}
-        <RenderPaymentButton />
       </div>
-    </>
-  );
+    </div>
+    <div className={styles.seatsHolder}>
+      <RenderSeats/>
+    </div>
+  </div>
+)
 }
 
-type MovieType = {
-  movie: Movie;
-  isLoading: boolean;
-  isError: boolean;
-}
- 
 export default Seats;

@@ -9,21 +9,21 @@ import styles from './Seats.module.scss'
 import MoviesContext from '../../context/MoviesContext';
 
 
-  // ChatGPT 
+// ChatGPT 
 
-  const Seats = [{x: 0, y: 0, radius: 10}, {x: 50, y: 50, radius: 20}, {x: 100, y: 100, radius: 30}];
+const seats = [{x: 0, y: 0, radius: 10}, {x: 50, y: 50, radius: 20}, {x: 100, y: 100, radius: 30}];
 
-for (const Seat of Seats) {
+for (const seat of seats) {
   for (let i = 0; i < 8; i++) {
     const angle = (Math.PI / 4) * i; // divide a full circle into 8 equal parts
-    const x = Seat.x + Math.cos(angle) * Seat.radius;
-    const y = Seat.y + Math.sin(angle) * Seat.radius;
-    const smallerSeat = {x, y, radius: Seat.radius / 2};
+    const x = seat.x + Math.cos(angle) * seat.radius;
+    const y = seat.y + Math.sin(angle) * seat.radius;
+    const smallerSeat = {x, y, radius: seat.radius / 2};
     console.log(smallerSeat);
   }
 }
 
- // ChatGPT code 
+// ChatGPT code 
 
 const Seats = () => { 
   const { movies } = useContext(MoviesContext);

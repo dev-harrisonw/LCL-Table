@@ -8,19 +8,6 @@ import { Movie, Seats } from '../../constants/models/Movies'
 import styles from './Seats.module.scss'
 import MoviesContext from '../../context/MoviesContext';
 
-const Seats = () => { 
-  const { movies } = useContext(MoviesContext);
-  const router = useRouter()
-  let selectedSeats: string[] = [];
-  const { id, seats }: any = router.query
-  const movie = movies.find(mov => mov.id === parseInt(id));
-  const [seatDetails, setSeatDetails] = useState<Seats>(movie?.seats || {});
-  
-  useEffect(() => { 
-    if (!seats) {
-      clearSelectedSeats();
-    }
-  }, [])
 
   // ChatGPT 
 
@@ -37,6 +24,21 @@ for (const seat of seats) {
 }
 
  // ChatGPT code 
+ 
+const Seats = () => { 
+  const { movies } = useContext(MoviesContext);
+  const router = useRouter()
+  let selectedSeats: string[] = [];
+  const { id, seats }: any = router.query
+  const movie = movies.find(mov => mov.id === parseInt(id));
+  const [seatDetails, setSeatDetails] = useState<Seats>(movie?.seats || {});
+  
+  useEffect(() => { 
+    if (!seats) {
+      clearSelectedSeats();
+    }
+  }, [])
+
 
   const clearSelectedSeats = () => {
     let newMovieSeatDetails = {...seatDetails};

@@ -1,39 +1,46 @@
-import { createConnection, Connection } from 'typeorm';
+import { Entity, Column, PrimaryColumn, createConnection, Connection } from 'typeorm';
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
+@Entity()
+class TableAvailability {
+  @PrimaryColumn()
+  TableID!: number;
+
+  @Column({ enum: ['Silver', 'Gold', 'Platinum'] })
+  Status!: 'Silver' | 'Gold' | 'Platinum';
+
+  @Column()
+  Availability!: boolean;
 }
 
-async function run(): Promise<void> {
-  let connection: Connection;
+async function getTableStatus(TableID: number): Promise<TableAvailability | null> {
+  const connection: Connection = await createConnection({
+    type: 'mysql',
+    host: 'londoncomedylunch.database.windows.net',
+    port: 1433,
+    username: 'Inconnection_LCL',
+    password: 'Golfer70!',
+    database: 'Seats',
+    entities: [TableAvailability],
+  });
 
-  try {
-    connection = await createConnection({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'db_user',
-      password: 'db_password',
-      database: 'db_name',
-      entities: [User],
-      synchronize: true,
-    });
+  const tableAvailabilityRepository = connection.getRepository(TableAvailability);
+  const table = await tableAvailabilityRepository.findOne(TableID);
 
-    const userRepository = connection.getRepository(User);
-    const users = await userRepository.find();
-    console.log(users);
-  } catch (error) {
-    console.error(error);
-  } finally {
-    if (connection) {
-      await connection.close();
+  await connection.close();
+
+  return table || null;
+}
+
+// Example usage:
+getTableStatus(1).then((table) => {
+  if (table) {
+    const div = document.getElementById('table-1');
+    if (table.Availability) {
+      div.style.backgroundColor = 'green'; // Table is available
+    } else {
+      div.style.backgroundColor = 'red'; // Table is not available
     }
+  } else {
+    console.log('Table not found');
   }
-}
-
-run();
-
-
-
+});

@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, createConnection, Connection } from 'typeorm';
-
+// test
 @Entity()
 class TableAvailability {
   @PrimaryColumn()

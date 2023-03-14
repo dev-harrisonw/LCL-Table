@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, createConnection, Connection } from 'typeorm';
-// test
+
 @Entity()
 class TableAvailability {
   @PrimaryColumn()
@@ -17,14 +17,14 @@ async function getTableStatus(TableID: number): Promise<TableAvailability | null
     type: 'mysql',
     host: 'londoncomedylunch.database.windows.net',
     port: 1433,
-    username: 'Inconnection_LCL',
+    username: 'calanh@inconnection.com ',
     password: 'Golfer70!',
-    database: 'Seats',
+    database: 'Inconnection_LCL',
     entities: [TableAvailability],
   });
 
   const tableAvailabilityRepository = connection.getRepository(TableAvailability);
-  const table = await tableAvailabilityRepository.findOne(TableID);
+  const table = await tableAvailabilityRepository.findOne({ where: { TableID } });
 
   await connection.close();
 
@@ -34,7 +34,7 @@ async function getTableStatus(TableID: number): Promise<TableAvailability | null
 // Example usage:
 getTableStatus(1).then((table) => {
   if (table) {
-    const div = document.getElementById('table-1');
+    const div = document.getElementById('table-1') as HTMLDivElement;
     if (table.Availability) {
       div.style.backgroundColor = 'green'; // Table is available
     } else {
